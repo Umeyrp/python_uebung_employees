@@ -56,5 +56,16 @@
             Anzahl Mitarbeiter, die mehr oder gleich 5000€ im Monat verdienen:
         </h1>
         {{count_salary_gt_5000}}
+
+        <h1>Durchschnittsgehalt der Mitarbeiter im Sales:</h1>
+        {{avg_sales}}€
+
+        <h1>
+            Mitarbeiter, vor dem 1. Januar 2022 eingestellt wurden und nicht im
+            HR Team sind:
+        </h1>
+        {% for person in employees_before_date%}
+        <p>{{person.name}}: Gehalt: {{person.salary}}€</p>
+        {% endfor %}
     </body>
 </html>
